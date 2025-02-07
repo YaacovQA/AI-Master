@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     line-height: 1.6;
     color: #fff;
     background-color: #000;
@@ -25,10 +25,11 @@ header {
 
 header .logo {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     color: #ff4d4d; /* Rouge vibrant */
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 header .menu {
