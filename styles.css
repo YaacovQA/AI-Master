@@ -8,17 +8,16 @@
 body {
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #fff;
+    background-color: #000;
 }
 
 header {
-    background-color: #fff;
+    background-color: #000;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,14 +34,14 @@ header .menu {
 }
 
 header .menu a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header .menu a:hover {
-    color: #007BFF;
+    color: #ff4d4d; /* Rouge vibrant */
 }
 
 .hero {
@@ -66,6 +65,9 @@ header .menu a:hover {
 .hero-content {
     position: relative;
     z-index: 2;
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le texte */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -79,8 +81,8 @@ header .menu a:hover {
 }
 
 .hero button {
-    background-color: #ffdd57;
-    color: #333;
+    background-color: #ff4d4d;
+    color: white;
     border: none;
     padding: 15px 30px;
     font-size: 1em;
@@ -96,13 +98,14 @@ header .menu a:hover {
 .features, .training, .tools, .shop, .contact, .signup {
     padding: 50px 20px;
     text-align: center;
+    background-color: #000;
 }
 
 .features .feature, .training .course, .tools .tool, .shop .product {
-    background: white;
+    background: #1a1a1a; /* Noir légèrement plus clair */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2); /* Ombre rouge */
     margin: 20px auto;
     max-width: 300px;
 }
@@ -116,7 +119,7 @@ header .menu a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #007BFF;
+    background-color: #ff4d4d;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -125,11 +128,11 @@ header .menu a:hover {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #cc0000; /* Rouge plus foncé */
 }
 
 footer {
-    background-color: #333;
+    background-color: #000;
     color: white;
     text-align: center;
     padding: 20px;
@@ -152,7 +155,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007BFF;
+    background-color: #ff4d4d;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -163,5 +166,21 @@ footer {
 }
 
 #back-to-top:hover {
-    background-color: #0056b3;
+    background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
 }
