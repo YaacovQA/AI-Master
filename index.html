@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Apprendre l'IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formation.html">Formation IA</a></li>
+                <li><a href="outils.html">Outils IA</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenue dans notre boutique</h1>
+        <p>Choisissez parmi nos packs de prompts, eBooks et outils IA pour maîtriser l'intelligence artificielle.</p>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <h2>Pack Marketing IA</h2>
+            <p>Prompts spécialement conçus pour les professionnels du marketing.</p>
+            <button id="checkout-button-marketing">Acheter maintenant - 29€</button>
+        </div>
+
+        <div class="product">
+            <h2>eBook : Le Guide Complet de l'IA</h2>
+            <p>Apprenez tout ce qu'il faut savoir sur l'IA en quelques heures.</p>
+            <button id="checkout-button-ebook">Acheter maintenant - 19€</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Apprendre l'IA. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialisation de Stripe
+        const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY');
+
+        // Bouton pour le Pack Marketing IA
+        document.getElementById('checkout-button-marketing').addEventListener('click', async () => {
+            const { error } = await stripe.redirectToCheckout({
+                lineItems: [{ price: 'PRICE_ID_MARKETING', quantity: 1 }],
+                mode: 'payment',
+                successUrl: 'https://your-site.com/success',
+                cancelUrl: 'https://your-site.com/cancel',
+            });
+
+            if (error) {
+                console.error('Erreur lors du paiement :', error);
+            }
+        });
+
+        // Bouton pour l'eBook
+        document.getElementById('checkout-button-ebook').addEventListener('click', async () => {
+            const { error } = await stripe.redirectToCheckout({
+                lineItems: [{ price: 'PRICE_ID_EBOOK', quantity: 1 }],
+                mode: 'payment',
+                successUrl: 'https://your-site.com/success',
+                cancelUrl: 'https://your-site.com/cancel',
+            });
+
+            if (error) {
+                console.error('Erreur lors du paiement :', error);
+            }
+        });
+    </script>
+</body>
+</html>
