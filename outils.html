@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outils IA - AI Master</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -17,6 +18,11 @@
             <li><a href="boutique.html">Boutique</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="language-selector">
+            <button onclick="changeLanguage('fr')">FR</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('he')">HE</button>
+        </div>
     </header>
 
     <!-- Section Tools -->
@@ -46,11 +52,27 @@
     <!-- Bouton Retour en haut -->
     <button id="back-to-top">Retour en haut</button>
 
+    <!-- Bouton WhatsApp -->
+    <a href="https://wa.me/+972549431930" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 AI Master. Tous droits réservés.</p>
+        <p>&copy; 2023 AI Master. Tous droits réservés. <a href="politique-confidentialite.html">Politique de confidentialité</a> | <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'he') {
+                document.body.style.direction = 'rtl';
+            } else {
+                document.body.style.direction = 'ltr';
+            }
+            // Ici, vous pouvez ajouter une logique pour charger les traductions dynamiquement
+            alert(`Langue changée en ${lang.toUpperCase()}`);
+        }
+    </script>
 </body>
 </html>
