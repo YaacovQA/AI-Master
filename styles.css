@@ -101,36 +101,29 @@ header .menu a:hover {
     transform: scale(1.05);
 }
 
-.features, .training, .tools, .shop, .contact, .signup {
+.features {
     padding: 50px 20px;
-    text-align: center;
     background-color: #000;
+    overflow-x: auto; /* Activer le défilement horizontal */
+    white-space: nowrap; /* Empêcher le retour à la ligne */
 }
 
-.features, .training, .tools, .shop {
-    display: flex;
-    flex-wrap: wrap; /* Permet de passer à une disposition verticale sur petits écrans */
-    justify-content: center;
-    gap: 20px; /* Espacement entre les éléments */
-}
-
-.features .feature, .training .course, .tools .tool, .shop .product {
-    background: #1a1a1a;
+.features .feature {
+    display: inline-block; /* Afficher les éléments côte à côte */
+    width: 100vw; /* Chaque section prend toute la largeur de l'écran */
+    min-width: 300px; /* Largeur minimale pour les petits écrans */
     padding: 20px;
+    background: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-    margin: 0 auto;
-    max-width: 300px;
-    flex: 1 1 calc(33.333% - 40px); /* Trois éléments par ligne sur grands écrans */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-right: 20px; /* Espacement entre les sections */
     text-align: center;
+    vertical-align: top; /* Aligner les éléments en haut */
 }
 
-.features img, .training img, .tools img, .shop img {
-    width: 100%;
-    height: auto;
+.features img {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: auto; /* Conserver les proportions */
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -218,7 +211,11 @@ footer {
         gap: 10px;
     }
 
-    .features .feature, .training .course, .tools .tool, .shop .product {
-        flex: 1 1 100%; /* Un élément par ligne sur petits écrans */
+    .features {
+        padding: 20px;
+    }
+
+    .features .feature {
+        width: 90vw; /* Ajuster la largeur pour les petits écrans */
     }
 }
