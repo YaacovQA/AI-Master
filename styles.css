@@ -95,4 +95,225 @@ header .menu a:hover {
     border-radius: 10px;
 }
 
-.hero h
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+.features, .training, .tools, .shop {
+    padding: 50px 20px;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap; /* Adaptatif pour petits écrans */
+    justify-content: center;
+    gap: 20px; /* Espacement entre les sections */
+}
+
+.features .feature, .training .course, .tools .tool, .shop .product {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
+    width: calc(33.333% - 40px); /* Trois sections par ligne sur grands écrans */
+    min-width: 300px; /* Largeur minimale pour petits écrans */
+    text-align: center;
+}
+
+.features img, .training img, .tools img, .shop img {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: 200px; /* Hauteur fixe pour uniformité */
+    object-fit: cover; /* Conserver les proportions */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animation fade-in */
+.fade-in-target {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Bouton Retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #cc0000;
+}
+
+/* Bouton WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-button i {
+    font-size: 1.5em;
+    color: white;
+}
+
+/* Formulaire Premium Vertical */
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(255, 77, 77, 0.3);
+    position: relative;
+}
+
+.contact-form h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff4d4d;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea, .contact-form select {
+    width: 100%;
+    padding: 20px; /* Champs plus grands */
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em; /* Texte plus grand */
+    background: #333;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+    transform: scale(1.02);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.4em; /* Bouton plus grand */
+    padding: 20px; /* Bouton plus grand */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Bouton plein écran sur mobile */
+}
+
+.contact-form button:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .features .feature, .training .course, .tools .tool, .shop .product {
+        width: 100%; /* Une section par ligne sur petits écrans */
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .contact-form input, .contact-form textarea, .contact-form select {
+        font-size: 1em; /* Réduire la taille du texte sur mobile */
+        padding: 15px; /* Réduire la taille des champs sur mobile */
+    }
+
+    .contact-form button {
+        font-size: 1.2em; /* Réduire la taille du bouton sur mobile */
+        padding: 15px;
+    }
+}
