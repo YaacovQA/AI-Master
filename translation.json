@@ -1,0 +1,38 @@
+{
+    "fr": {
+        "welcome": "Bienvenue sur AI Master",
+        "hero_subtitle": "Découvrez comment l'intelligence artificielle peut transformer votre carrière et votre entreprise.",
+        "features_title": "Nos fonctionnalités",
+        "feature_1_title": "Formations IA",
+        "feature_1_desc": "Des cours pratiques pour maîtriser l'IA dans tous les domaines.",
+        "feature_2_title": "Outils IA",
+        "feature_2_desc": "Une liste complète d'outils IA avec des guides détaillés.",
+        "feature_3_title": "Boutique",
+        "feature_3_desc": "Achetez des packs de prompts, eBooks et ressources exclusives.",
+        "footer_text": "&copy; 2023 AI Master. Tous droits réservés."
+    },
+    "en": {
+        "welcome": "Welcome to AI Master",
+        "hero_subtitle": "Discover how artificial intelligence can transform your career and business.",
+        "features_title": "Our features",
+        "feature_1_title": "AI Training",
+        "feature_1_desc": "Practical courses to master AI in all fields.",
+        "feature_2_title": "AI Tools",
+        "feature_2_desc": "A complete list of AI tools with detailed guides.",
+        "feature_3_title": "Shop",
+        "feature_3_desc": "Buy prompt packs, eBooks, and exclusive resources.",
+        "footer_text": "&copy; 2023 AI Master. All rights reserved."
+    },
+    "he": {
+        "welcome": "ברוכים הבאים ל- AI Master",
+        "hero_subtitle": "גלה כיצד בינה מלאכותית יכולה להפוך את הקריירה והעסק שלך.",
+        "features_title": "התכונות שלנו",
+        "feature_1_title": "הדרכות AI",
+        "feature_1_desc": "קורסים מעשיים לשלוט ב-AI בכל התחומים.",
+        "feature_2_title": "כלים AI",
+        "feature_2_desc": "רשימה מלאה של כלים AI עם מדריכים מפורטים.",
+        "feature_3_title": "חנות",
+        "feature_3_desc": "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים.",
+        "footer_text": "&copy; 2023 AI Master. כל הזכויות שמורות."
+    }
+}
