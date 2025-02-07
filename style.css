@@ -16,62 +16,66 @@ header {
     background: linear-gradient(135deg, #007BFF, #0056b3);
     color: white;
     padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header .logo img {
+    height: 50px;
 }
 
-nav a {
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header .menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+header .menu a:hover {
     color: #ffdd57;
 }
 
 .hero {
-    background: url('https://source.unsplash.com/1600x900/?artificial-intelligence') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
     color: white;
     text-align: center;
     padding: 150px 20px;
-    position: relative;
-    overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+.hero video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
     font-size: 3em;
-    font-weight: bold;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.2em;
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 30px;
 }
 
 .hero button {
@@ -82,81 +86,46 @@ nav a:hover {
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
     transition: transform 0.3s ease;
-    position: relative;
-    z-index: 2;
 }
 
 .hero button:hover {
     transform: scale(1.05);
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.features, .training, .tools, .shop, .contact, .signup {
     padding: 50px 20px;
-    background-color: white;
+    text-align: center;
 }
 
-.feature {
-    background: linear-gradient(135deg, #ffffff, #f0f8ff);
-    padding: 30px;
+.features .feature, .training .course, .tools .tool, .shop .product {
+    background: white;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    margin: 20px auto;
+    max-width: 300px;
 }
 
-.feature img {
+.features img, .training img, .tools img, .shop img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.feature h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #007BFF;
-}
-
-.feature p {
-    font-size: 1em;
-    color: #555;
-}
-
-.feature a {
+.btn {
     display: inline-block;
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
-.feature a:hover {
+.btn:hover {
     background-color: #0056b3;
-}
-
-.video-section {
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.video-section video {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -166,6 +135,17 @@ footer {
     padding: 20px;
 }
 
-footer p {
-    font-size: 0.9em;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
 }
