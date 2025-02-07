@@ -101,29 +101,29 @@ header .menu a:hover {
     transform: scale(1.05);
 }
 
-.features {
+.features, .training, .tools, .shop {
     padding: 50px 20px;
     background-color: #000;
-    overflow-x: auto; /* Activer le défilement horizontal */
-    white-space: nowrap; /* Empêcher le retour à la ligne */
+    display: flex;
+    flex-wrap: wrap; /* Adaptatif pour petits écrans */
+    justify-content: center;
+    gap: 20px; /* Espacement entre les sections */
 }
 
-.features .feature {
-    display: inline-block; /* Afficher les éléments côte à côte */
-    width: 100vw; /* Chaque section prend toute la largeur de l'écran */
-    min-width: 300px; /* Largeur minimale pour les petits écrans */
-    padding: 20px;
+.features .feature, .training .course, .tools .tool, .shop .product {
     background: #1a1a1a;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-    margin-right: 20px; /* Espacement entre les sections */
+    width: calc(33.333% - 40px); /* Trois sections par ligne sur grands écrans */
+    min-width: 300px; /* Largeur minimale pour petits écrans */
     text-align: center;
-    vertical-align: top; /* Aligner les éléments en haut */
 }
 
-.features img {
+.features img, .training img, .tools img, .shop img {
     width: 100%; /* L'image prend toute la largeur de la section */
-    height: auto; /* Conserver les proportions */
+    height: 200px; /* Hauteur fixe pour uniformité */
+    object-fit: cover; /* Conserver les proportions */
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -188,7 +188,7 @@ footer {
     background-color: #25D366;
     color: white;
     border: none;
-    padding: 15px 20px;
+    padding: 15px;
     border-radius: 50%;
     font-size: 1.5em;
     cursor: pointer;
@@ -200,8 +200,60 @@ footer {
     justify-content: center;
 }
 
-.whatsapp-button:hover {
-    background-color: #128C7E;
+.whatsapp-button i {
+    font-size: 1.5em;
+    color: white;
+}
+
+/* Formulaire moderne */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #333;
+    color: white;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -211,11 +263,7 @@ footer {
         gap: 10px;
     }
 
-    .features {
-        padding: 20px;
-    }
-
-    .features .feature {
-        width: 90vw; /* Ajuster la largeur pour les petits écrans */
+    .features .feature, .training .course, .tools .tool, .shop .product {
+        width: 100%; /* Une section par ligne sur petits écrans */
     }
 }
