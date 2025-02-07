@@ -18,6 +18,11 @@
             <li><a href="boutique.html">Boutique</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="language-selector">
+            <button onclick="changeLanguage('fr')">FR</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('he')">HE</button>
+        </div>
     </header>
 
     <!-- Section Hero -->
@@ -66,5 +71,16 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'he') {
+                document.body.style.direction = 'rtl';
+            } else {
+                document.body.style.direction = 'ltr';
+            }
+            // Ici, vous pouvez ajouter une logique pour charger les traductions dynamiquement
+            alert(`Langue changée en ${lang.toUpperCase()}`);
+        }
+    </script>
 </body>
 </html>
