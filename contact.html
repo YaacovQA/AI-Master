@@ -1,51 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - AI Master</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="logo">AI Master</div>
-        <ul class="menu">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="formation.html">Formation IA</a></li>
-            <li><a href="outils.html">Outils IA</a></li>
-            <li><a href="boutique.html">Boutique</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </header>
+<section class="contact">
+    <h1 class="fade-in-target">Contactez-nous</h1>
+    <p class="fade-in-target">Vous avez des questions ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.</p>
 
-    <!-- Section Contact -->
-    <section class="contact">
-        <h1 class="fade-in-target">Contactez-nous</h1>
-        <p class="fade-in-target">Vous avez des questions ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.</p>
+    <form action="submit-form.php" method="POST" class="contact-form fade-in-target">
+        <h2>Contactez-nous</h2>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
 
-        <form action="submit-form.php" method="POST" class="fade-in-target">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
-
-    <!-- Bouton Retour en haut -->
-    <button id="back-to-top">Retour en haut</button>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 AI Master. Tous droits réservés.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
