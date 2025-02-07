@@ -135,20 +135,6 @@ footer {
     padding: 20px;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-}
 /* Animation fade-in */
 .fade-in-target {
     opacity: 0;
@@ -161,18 +147,7 @@ footer {
     transform: translateY(0);
 }
 
-/* Parallax effect */
-.parallax {
-    transition: transform 0.3s ease;
-}
-
-/* Sticky header */
-header.sticky {
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Back to top button */
+/* Bouton Retour en haut */
 #back-to-top {
     position: fixed;
     bottom: 20px;
