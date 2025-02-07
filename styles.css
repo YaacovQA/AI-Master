@@ -23,8 +23,12 @@ header {
     z-index: 1000;
 }
 
-header .logo img {
-    height: 50px;
+header .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff4d4d; /* Rouge vibrant */
+    text-transform: uppercase;
 }
 
 header .menu {
@@ -41,7 +45,7 @@ header .menu a {
 }
 
 header .menu a:hover {
-    color: #ff4d4d; /* Rouge vibrant */
+    color: #ff4d4d;
 }
 
 .hero {
@@ -65,12 +69,13 @@ header .menu a:hover {
 .hero-content {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le texte */
+    background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
 }
 
 .hero h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 3em;
     margin-bottom: 20px;
 }
@@ -102,10 +107,10 @@ header .menu a:hover {
 }
 
 .features .feature, .training .course, .tools .tool, .shop .product {
-    background: #1a1a1a; /* Noir légèrement plus clair */
+    background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2); /* Ombre rouge */
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
     margin: 20px auto;
     max-width: 300px;
 }
@@ -128,7 +133,7 @@ header .menu a:hover {
 }
 
 .btn:hover {
-    background-color: #cc0000; /* Rouge plus foncé */
+    background-color: #cc0000;
 }
 
 footer {
