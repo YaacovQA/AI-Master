@@ -32,16 +32,16 @@
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
         <div class="hero-content fade-in-target">
-            <h1>Nos formations IA</h1>
-            <p>Apprenez à utiliser l'intelligence artificielle pour transformer votre carrière ou votre entreprise.</p>
+            <h1 data-key="training_welcome">Nos formations IA</h1>
+            <p data-key="training_subtitle">Apprenez à utiliser l'intelligence artificielle pour transformer votre carrière ou votre entreprise.</p>
             <button onclick="window.location.href='inscription.html'">Commencez gratuitement</button>
         </div>
     </section>
 
     <!-- Section Training -->
     <section class="training">
-        <h1 class="fade-in-target">Nos cours</h1>
-        <p class="fade-in-target">Apprenez à utiliser l'intelligence artificielle pour transformer votre carrière ou votre entreprise.</p>
+        <h1 data-key="training_title">Nos cours</h1>
+        <p data-key="training_desc">Apprenez à utiliser l'intelligence artificielle pour transformer votre carrière ou votre entreprise.</p>
 
         <div class="courses">
             <div class="course fade-in-target">
@@ -65,6 +65,17 @@
         </div>
     </section>
 
+    <!-- Section Impact -->
+    <section class="impact">
+        <h1 data-key="training_impact_title">Pourquoi suivre nos formations ?</h1>
+        <p data-key="training_impact_desc">Nos formations sont conçues pour vous offrir une expérience pratique et immédiate dans le domaine de l'IA.</p>
+        <ul>
+            <li data-key="training_impact_1">Apprentissage par la pratique avec des projets réels.</li>
+            <li data-key="training_impact_2">Accès à des experts en IA pour répondre à vos questions.</li>
+            <li data-key="training_impact_3">Certification reconnue dans l'industrie.</li>
+        </ul>
+    </section>
+
     <!-- Bouton Retour en haut -->
     <button id="back-to-top">Retour en haut</button>
 
@@ -75,20 +86,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 AI Master. Tous droits réservés. <a href="politique-confidentialite.html">Politique de confidentialité</a> | <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
+        <p data-key="footer_text">&copy; 2023 AI Master. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        function changeLanguage(lang) {
-            if (lang === 'he') {
-                document.body.style.direction = 'rtl';
-            } else {
-                document.body.style.direction = 'ltr';
-            }
-            // Ici, vous pouvez ajouter une logique pour charger les traductions dynamiquement
-            alert(`Langue changée en ${lang.toUpperCase()}`);
-        }
-    </script>
-</body>
-</html>
+        // Traductions
+        const translations = {
+            fr:
