@@ -32,16 +32,16 @@
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
         <div class="hero-content fade-in-target">
-            <h1>Notre boutique</h1>
-            <p>Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
+            <h1 data-key="shop_welcome">Notre boutique</h1>
+            <p data-key="shop_subtitle">Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
             <button onclick="window.location.href='inscription.html'">Commencez gratuitement</button>
         </div>
     </section>
 
     <!-- Section Shop -->
     <section class="shop">
-        <h1 class="fade-in-target">Nos produits</h1>
-        <p class="fade-in-target">Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
+        <h1 data-key="shop_title">Nos produits</h1>
+        <p data-key="shop_desc">Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
 
         <div class="products">
             <div class="product fade-in-target">
@@ -80,6 +80,17 @@
         </div>
     </section>
 
+    <!-- Section Impact -->
+    <section class="impact">
+        <h1 data-key="shop_impact_title">Pourquoi acheter chez nous ?</h1>
+        <p data-key="shop_impact_desc">Nos produits sont conçus pour vous aider à maîtriser l'IA rapidement et efficacement.</p>
+        <ul>
+            <li data-key="shop_impact_1">Ressources exclusives et mises à jour régulières.</li>
+            <li data-key="shop_impact_2">Support client disponible 24/7.</li>
+            <li data-key="shop_impact_3">Garantie de satisfaction à 100%.</li>
+        </ul>
+    </section>
+
     <!-- Bouton Retour en haut -->
     <button id="back-to-top">Retour en haut</button>
 
@@ -90,20 +101,66 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 AI Master. Tous droits réservés. <a href="politique-confidentialite.html">Politique de confidentialité</a> | <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
+        <p data-key="footer_text">&copy; 2023 AI Master. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
+        // Traductions
+        const translations = {
+            fr: {
+                shop_welcome: "Notre boutique",
+                shop_subtitle: "Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.",
+                shop_title: "Nos produits",
+                shop_desc: "Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.",
+                shop_impact_title: "Pourquoi acheter chez nous ?",
+                shop_impact_desc: "Nos produits sont conçus pour vous aider à maîtriser l'IA rapidement et efficacement.",
+                shop_impact_1: "Ressources exclusives et mises à jour régulières.",
+                shop_impact_2: "Support client disponible 24/7.",
+                shop_impact_3: "Garantie de satisfaction à 100%.",
+                footer_text: "&copy; 2023 AI Master. Tous droits réservés."
+            },
+            en: {
+                shop_welcome: "Our shop",
+                shop_subtitle: "Buy prompt packs, eBooks, and exclusive resources to master AI.",
+                shop_title: "Our products",
+                shop_desc: "Buy prompt packs, eBooks, and exclusive resources to master AI.",
+                shop_impact_title: "Why buy from us?",
+                shop_impact_desc: "Our products are designed to help you master AI quickly and efficiently.",
+                shop_impact_1: "Exclusive resources and regular updates.",
+                shop_impact_2: "24/7 customer support.",
+                shop_impact_3: "100% satisfaction guarantee.",
+                footer_text: "&copy; 2023 AI Master. All rights reserved."
+            },
+            he: {
+                shop_welcome: "החנות שלנו",
+                shop_subtitle: "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים כדי לשלוט ב-AI.",
+                shop_title: "המוצרים שלנו",
+                shop_desc: "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים כדי לשלוט ב-AI.",
+                shop_impact_title: "למה לקנות מאיתנו?",
+                shop_impact_desc: "המוצרים שלנו תוכננו כדי לעזור לך לשלוט ב-AI במהירות וביעילות.",
+                shop_impact_1: "משאבים בלעדיים ועדכונים קבועים.",
+                shop_impact_2: "תמיכה לקוחות זמינה 24/7.",
+                shop_impact_3: "гарантия удовлетворения на 100%.",
+                footer_text: "&copy; 2023 AI Master. כל הזכויות שמורות."
+            }
+        };
+
         function changeLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
             if (lang === 'he') {
                 document.body.style.direction = 'rtl';
             } else {
                 document.body.style.direction = 'ltr';
             }
-            // Ici, vous pouvez ajouter une logique pour charger les traductions dynamiquement
-            alert(`Langue changée en ${lang.toUpperCase()}`);
         }
+
+        window.onload = () => changeLanguage('fr');
     </script>
 </body>
 </html>
