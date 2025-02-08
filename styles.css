@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Style global */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     line-height: 1.6;
@@ -12,6 +13,7 @@ body {
     background-color: #000;
 }
 
+/* Header */
 header {
     background-color: #000;
     padding: 20px 40px;
@@ -23,6 +25,7 @@ header {
     z-index: 1000;
 }
 
+/* Logo */
 header .logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8em;
@@ -32,6 +35,7 @@ header .logo {
     letter-spacing: 2px;
 }
 
+/* Menu principal */
 header .menu {
     list-style: none;
     display: flex;
@@ -49,6 +53,7 @@ header .menu a:hover {
     color: #ff4d4d;
 }
 
+/* Section Hero */
 .hero {
     position: relative;
     overflow: hidden;
@@ -101,7 +106,8 @@ header .menu a:hover {
     transform: scale(1.05);
 }
 
-.features, .training, .tools, .shop, .contact, .signup {
+/* Sections communes */
+.features, .training, .tools, .shop, .contact, .legal {
     padding: 50px 20px;
     text-align: center;
     background-color: #000;
@@ -133,6 +139,11 @@ header .menu a:hover {
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.features img:hover, .training img:hover, .tools img:hover, .shop img:hover {
+    transform: scale(1.1); /* Effet zoom au survol */
 }
 
 .btn {
@@ -147,25 +158,6 @@ header .menu a:hover {
 
 .btn:hover {
     background-color: #cc0000;
-}
-
-footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Animation fade-in */
-.fade-in-target {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Bouton Retour en haut */
@@ -185,6 +177,59 @@ footer {
 
 #back-to-top:hover {
     background-color: #cc0000;
+}
+
+/* Bouton WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ff4d4d;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animation fade-in */
+.fade-in-target {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive Design */
