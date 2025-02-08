@@ -1,5 +1,5 @@
+// Animation de fade-in au scroll
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Animation de fade-in au scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 2. Bouton "Retour en haut"
+    // Bouton "Retour en haut"
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Validation du formulaire d'inscription
+    // Validation du formulaire d'inscription
     const signupForm = document.querySelector('#signup-form');
     if (signupForm) {
         signupForm.addEventListener('submit', (e) => {
