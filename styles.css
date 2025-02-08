@@ -111,14 +111,12 @@ header .menu a:hover {
     padding: 50px 20px;
     text-align: center;
     background-color: #000;
-    overflow-x: auto; /* Activation du défilement horizontal */
-    white-space: nowrap; /* Éviter le retour à la ligne */
 }
 
 .feature-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur grands écrans */
     gap: 20px; /* Espacement entre les éléments */
-    padding: 20px; /* Ajout de padding pour éviter les bords coupés */
 }
 
 .feature {
@@ -126,25 +124,30 @@ header .menu a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-    min-width: 300px; /* Largeur minimale pour chaque élément */
-    flex-shrink: 0; /* Empêcher les éléments de rétrécir */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
+    box-shadow: 0 8px 12px rgba(255, 77, 77, 0.3); /* Ombre plus prononcée */
 }
 
 .feature img {
     width: 300px; /* Largeur fixe */
     height: 200px; /* Hauteur fixe */
-    object-fit: cover; /* Ajuster l'image pour qu'elle remplisse l'espace sans déformation */
+    object-fit: cover; /* Ajuster l'image sans déformation */
     border-radius: 10px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border 0.3s ease;
 }
 
 .feature img:hover {
-    transform: scale(1.1); /* Effet zoom au survol */
+    transform: scale(1.1); /* Zoom léger au survol */
+    border: 2px solid #ff4d4d; /* Bordure rouge vibrante */
 }
 
 .btn {
@@ -159,6 +162,13 @@ header .menu a:hover {
 
 .btn:hover {
     background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-list {
+        grid-template-columns: 1fr; /* Une colonne sur petits écrans */
+    }
 }
 
 /* Bouton Retour en haut */
