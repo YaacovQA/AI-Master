@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez notre boutique de produits IA : packs de prompts, eBooks et ressources exclusives pour maîtriser l'intelligence artificielle.">
+    <meta property="og:title" content="Boutique - AI Master">
+    <meta property="og:description" content="Achetez des packs de prompts, eBooks et ressources exclusives pour maîtriser l'IA.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&w=1200&q=80">
     <title>Boutique - AI Master</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
@@ -18,11 +22,6 @@
             <li><a href="boutique.html">Boutique</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="language-selector">
-            <button onclick="changeLanguage('fr')">FR</button>
-            <button onclick="changeLanguage('en')">EN</button>
-            <button onclick="changeLanguage('he')">HE</button>
-        </div>
     </header>
 
     <!-- Section Hero -->
@@ -32,20 +31,20 @@
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
         <div class="hero-content fade-in-target">
-            <h1 data-key="shop_welcome">Notre boutique</h1>
-            <p data-key="shop_subtitle">Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
+            <h1>Notre boutique</h1>
+            <p>Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
             <button onclick="window.location.href='inscription.html'">Commencez gratuitement</button>
         </div>
     </section>
 
     <!-- Section Shop -->
     <section class="shop">
-        <h1 data-key="shop_title">Nos produits</h1>
-        <p data-key="shop_desc">Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
-
+        <h1>Nos produits</h1>
+        <p>Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.</p>
         <div class="products">
+            <!-- Produit 1 -->
             <div class="product fade-in-target">
-                <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab" alt="Pack Marketing IA" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&w=300&q=80" alt="Pack Marketing IA" loading="lazy">
                 <h3>Pack Marketing IA</h3>
                 <p>Prompts spécialement conçus pour les professionnels du marketing.</p>
                 <p class="price">29€</p>
@@ -55,8 +54,9 @@
                     <button type="submit" class="btn">Acheter avec PayPal</button>
                 </form>
             </div>
+            <!-- Produit 2 -->
             <div class="product fade-in-target">
-                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537" alt="eBook IA" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=300&q=80" alt="eBook IA" loading="lazy">
                 <h3>eBook : Le Guide Complet de l'IA</h3>
                 <p>Apprenez tout ce qu'il faut savoir sur l'IA en quelques heures.</p>
                 <p class="price">19€</p>
@@ -66,8 +66,9 @@
                     <button type="submit" class="btn">Acheter avec PayPal</button>
                 </form>
             </div>
+            <!-- Produit 3 -->
             <div class="product fade-in-target">
-                <img src="https://images.unsplash.com/photo-1581090968885-a4df0cb7b13b" alt="Pack Créatif IA" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1581090968885-a4df0cb7b13b?auto=format&fit=crop&w=300&q=80" alt="Pack Créatif IA" loading="lazy">
                 <h3>Pack Créatif IA</h3>
                 <p>Prompts pour générer des designs, scripts et idées innovantes.</p>
                 <p class="price">39€</p>
@@ -80,17 +81,6 @@
         </div>
     </section>
 
-    <!-- Section Impact -->
-    <section class="impact">
-        <h1 data-key="shop_impact_title">Pourquoi acheter chez nous ?</h1>
-        <p data-key="shop_impact_desc">Nos produits sont conçus pour vous aider à maîtriser l'IA rapidement et efficacement.</p>
-        <ul>
-            <li data-key="shop_impact_1">Ressources exclusives et mises à jour régulières.</li>
-            <li data-key="shop_impact_2">Support client disponible 24/7.</li>
-            <li data-key="shop_impact_3">Garantie de satisfaction à 100%.</li>
-        </ul>
-    </section>
-
     <!-- Bouton Retour en haut -->
     <button id="back-to-top">Retour en haut</button>
 
@@ -101,66 +91,9 @@
 
     <!-- Footer -->
     <footer>
-        <p data-key="footer_text">&copy; 2023 AI Master. Tous droits réservés.</p>
+        <p>&copy; 2023 AI Master. Tous droits réservés. <a href="politique-confidentialite.html">Politique de confidentialité</a> | <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
     </footer>
 
-    <script>
-        // Traductions
-        const translations = {
-            fr: {
-                shop_welcome: "Notre boutique",
-                shop_subtitle: "Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.",
-                shop_title: "Nos produits",
-                shop_desc: "Achetez des packs de prompts, des eBooks et des ressources exclusives pour maîtriser l'IA.",
-                shop_impact_title: "Pourquoi acheter chez nous ?",
-                shop_impact_desc: "Nos produits sont conçus pour vous aider à maîtriser l'IA rapidement et efficacement.",
-                shop_impact_1: "Ressources exclusives et mises à jour régulières.",
-                shop_impact_2: "Support client disponible 24/7.",
-                shop_impact_3: "Garantie de satisfaction à 100%.",
-                footer_text: "&copy; 2023 AI Master. Tous droits réservés."
-            },
-            en: {
-                shop_welcome: "Our shop",
-                shop_subtitle: "Buy prompt packs, eBooks, and exclusive resources to master AI.",
-                shop_title: "Our products",
-                shop_desc: "Buy prompt packs, eBooks, and exclusive resources to master AI.",
-                shop_impact_title: "Why buy from us?",
-                shop_impact_desc: "Our products are designed to help you master AI quickly and efficiently.",
-                shop_impact_1: "Exclusive resources and regular updates.",
-                shop_impact_2: "24/7 customer support.",
-                shop_impact_3: "100% satisfaction guarantee.",
-                footer_text: "&copy; 2023 AI Master. All rights reserved."
-            },
-            he: {
-                shop_welcome: "החנות שלנו",
-                shop_subtitle: "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים כדי לשלוט ב-AI.",
-                shop_title: "המוצרים שלנו",
-                shop_desc: "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים כדי לשלוט ב-AI.",
-                shop_impact_title: "למה לקנות מאיתנו?",
-                shop_impact_desc: "המוצרים שלנו תוכננו כדי לעזור לך לשלוט ב-AI במהירות וביעילות.",
-                shop_impact_1: "משאבים בלעדיים ועדכונים קבועים.",
-                shop_impact_2: "תמיכה לקוחות זמינה 24/7.",
-                shop_impact_3: "гарантия удовлетворения на 100%.",
-                footer_text: "&copy; 2023 AI Master. כל הזכויות שמורות."
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-
-            if (lang === 'he') {
-                document.body.style.direction = 'rtl';
-            } else {
-                document.body.style.direction = 'ltr';
-            }
-        }
-
-        window.onload = () => changeLanguage('fr');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
