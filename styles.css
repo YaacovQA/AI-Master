@@ -111,13 +111,14 @@ header .menu a:hover {
     padding: 50px 20px;
     text-align: center;
     background-color: #000;
+    overflow-x: auto; /* Activation du défilement horizontal */
+    white-space: nowrap; /* Éviter le retour à la ligne */
 }
 
 .feature-list {
     display: flex;
-    flex-wrap: wrap; /* Permet de passer à une disposition verticale sur petits écrans */
-    justify-content: center;
     gap: 20px; /* Espacement entre les éléments */
+    padding: 20px; /* Ajout de padding pour éviter les bords coupés */
 }
 
 .feature {
@@ -125,9 +126,8 @@ header .menu a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-    margin: 0 auto;
-    max-width: 300px;
-    flex: 1 1 calc(33.333% - 40px); /* Trois éléments par ligne sur grands écrans */
+    min-width: 300px; /* Largeur minimale pour chaque élément */
+    flex-shrink: 0; /* Empêcher les éléments de rétrécir */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,8 +135,9 @@ header .menu a:hover {
 }
 
 .feature img {
-    width: 100%;
-    height: auto;
+    width: 300px; /* Largeur fixe */
+    height: 200px; /* Hauteur fixe */
+    object-fit: cover; /* Ajuster l'image pour qu'elle remplisse l'espace sans déformation */
     border-radius: 10px;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
@@ -230,16 +231,4 @@ footer a:hover {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .feature {
-        flex: 1 1 100%; /* Un élément par ligne sur petits écrans */
-    }
 }
