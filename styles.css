@@ -107,20 +107,20 @@ header .menu a:hover {
 }
 
 /* Sections communes */
-.features, .training, .tools, .shop, .contact, .legal {
+.features {
     padding: 50px 20px;
     text-align: center;
     background-color: #000;
 }
 
-.features, .training, .tools, .shop {
+.feature-list {
     display: flex;
     flex-wrap: wrap; /* Permet de passer à une disposition verticale sur petits écrans */
     justify-content: center;
     gap: 20px; /* Espacement entre les éléments */
 }
 
-.features .feature, .training .course, .tools .tool, .shop .product {
+.feature {
     background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
@@ -134,7 +134,7 @@ header .menu a:hover {
     text-align: center;
 }
 
-.features img, .training img, .tools img, .shop img {
+.feature img {
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -142,7 +142,7 @@ header .menu a:hover {
     transition: transform 0.3s ease;
 }
 
-.features img:hover, .training img:hover, .tools img:hover, .shop img:hover {
+.feature img:hover {
     transform: scale(1.1); /* Effet zoom au survol */
 }
 
@@ -239,7 +239,7 @@ footer a:hover {
         gap: 10px;
     }
 
-    .features .feature, .training .course, .tools .tool, .shop .product {
+    .feature {
         flex: 1 1 100%; /* Un élément par ligne sur petits écrans */
     }
 }
