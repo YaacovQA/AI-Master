@@ -3,128 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Master - Formation et outils en intelligence artificielle">
+    <meta name="keywords" content="IA, intelligence artificielle, formation, outils">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Master - Formation IA">
+    <meta property="og:description" content="Découvrez comment l'intelligence artificielle peut transformer votre carrière">
+    <meta property="og:image" content="/path/to/your/image.jpg">
+
     <title>Accueil - AI Master</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7afb650255.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">AI Master</div>
-        <ul class="menu">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="formation.html">Formation IA</a></li>
-            <li><a href="outils.html">Outils IA</a></li>
-            <li><a href="boutique.html">Boutique</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="formation.html">Formation IA</a></li>
+                <li><a href="outils.html">Outils IA</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
         <div class="language-selector">
-            <button onclick="changeLanguage('fr')">FR</button>
+            <button onclick="changeLanguage('fr')" class="active">FR</button>
             <button onclick="changeLanguage('en')">EN</button>
             <button onclick="changeLanguage('he')">HE</button>
         </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <!-- Section Hero -->
     <section class="hero">
-        <video autoplay muted loop playsinline id="hero-video">
-            <source src="https://www.pexels.com/video/technology-background-with-neon-lights-857195/" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos.
+        <video autoplay muted loop playsinline id="hero-video" poster="/path/to/fallback-image.jpg">
+            <source src="/assets/3129671-uhd_3840_2160_30fps.mp4 type="video/mp4">
         </video>
         <div class="hero-content fade-in-target">
             <h1 data-key="welcome">Bienvenue sur AI Master</h1>
             <p data-key="hero_subtitle">Découvrez comment l'intelligence artificielle peut transformer votre carrière et votre entreprise.</p>
-            <button onclick="window.location.href='inscription.html'">Commencez gratuitement</button>
+            <button onclick="window.location.href='formation.html'" class="cta-button">
+                Commencez gratuitement
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </section>
 
     <!-- Section Features -->
     <section class="features">
-        <h1 data-key="features_title">Nos fonctionnalités</h1>
+        <h2 data-key="features_title">Nos fonctionnalités</h2>
+        <div class="features-grid">
+            <div class="feature fade-in-target">
+                <div class="feature-image">
+                    <img src="assets/chatgptpic.webp" alt="Formation IA" loading="lazy">
+                </div>
+                <div class="feature-content">
+                    <h3 data-key="feature_1_title">Formations IA</h3>
+                    <p data-key="feature_1_desc">Des cours pratiques pour maîtriser l'IA dans tous les domaines.</p>
+                    <a href="formation.html" class="feature-link">En savoir plus <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
 
-        <div class="feature fade-in-target">
-            <img src="https://images.pexels.com/photos/6153343/pexels-photo-6153343.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation IA" loading="lazy">
-            <h2 data-key="feature_1_title">Formations IA</h2>
-            <p data-key="feature_1_desc">Des cours pratiques pour maîtriser l'IA dans tous les domaines.</p>
+            <div class="feature fade-in-target">
+                <div class="feature-image">
+                    <img src="images/outils.jpg" alt="Outils IA" loading="lazy">
+                </div>
+                <div class="feature-content">
+                    <h3 data-key="feature_2_title">Outils IA</h3>
+                    <p data-key="feature_2_desc">Une liste complète d'outils IA avec des guides détaillés.</p>
+                    <a href="outils.html" class="feature-link">Découvrir les outils <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <div class="feature fade-in-target">
+                <div class="feature-image">
+                    <img src="images/boutique.jpg" alt="Boutique IA" loading="lazy">
+                </div>
+                <div class="feature-content">
+                    <h3 data-key="feature_3_title">Boutique</h3>
+                    <p data-key="feature_3_desc">Achetez des packs de prompts, eBooks et ressources exclusives.</p>
+                    <a href="boutique.html" class="feature-link">Voir la boutique <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="feature fade-in-target">
-            <img src="https://images.pexels.com/photos/16037283/pexels-photo-16037283/free-photo-of-open-laptop-on-desk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Outils IA" loading="lazy">
-            <h2 data-key="feature_2_title">Outils IA</h2>
-            <p data-key="feature_2_desc">Une liste complète d'outils IA avec des guides détaillés.</p>
-        </div>
-        <div class="feature fade-in-target">
-            <img src="https://images.pexels.com/photos/7552372/pexels-photo-7552372.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boutique IA" loading="lazy">
-            <h2 data-key="feature_3_title">Boutique</h2>
-            <p data-key="feature_3_desc">Achetez des packs de prompts, eBooks et ressources exclusives.</p>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter fade-in-target">
+        <div class="newsletter-content">
+            <h2 data-key="newsletter_title">Restez informé</h2>
+            <p data-key="newsletter_desc">Recevez nos dernières actualités et conseils sur l'IA</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" placeholder="Votre email" required>
+                <button type="submit">S'inscrire</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p data-key="footer_text">&copy; 2023 AI Master. Tous droits réservés.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AI Master</h3>
+                <p data-key="footer_desc">Votre partenaire pour la maîtrise de l'intelligence artificielle.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="formation.html">Formation</a></li>
+                    <li><a href="outils.html">Outils</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@aimaster.com</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-key="footer_text">&copy; 2024 AI Master. Tous droits réservés.</p>
+        </div>
     </footer>
 
-    <script src="translations.json" type="application/json"></script>
-    <script>
-        // Charger les traductions depuis le fichier JSON
-        const translations = {
-            fr: {
-                welcome: "Bienvenue sur AI Master",
-                hero_subtitle: "Découvrez comment l'intelligence artificielle peut transformer votre carrière et votre entreprise.",
-                features_title: "Nos fonctionnalités",
-                feature_1_title: "Formations IA",
-                feature_1_desc: "Des cours pratiques pour maîtriser l'IA dans tous les domaines.",
-                feature_2_title: "Outils IA",
-                feature_2_desc: "Une liste complète d'outils IA avec des guides détaillés.",
-                feature_3_title: "Boutique",
-                feature_3_desc: "Achetez des packs de prompts, eBooks et ressources exclusives.",
-                footer_text: "&copy; 2023 AI Master. Tous droits réservés."
-            },
-            en: {
-                welcome: "Welcome to AI Master",
-                hero_subtitle: "Discover how artificial intelligence can transform your career and business.",
-                features_title: "Our features",
-                feature_1_title: "AI Training",
-                feature_1_desc: "Practical courses to master AI in all fields.",
-                feature_2_title: "AI Tools",
-                feature_2_desc: "A complete list of AI tools with detailed guides.",
-                feature_3_title: "Shop",
-                feature_3_desc: "Buy prompt packs, eBooks, and exclusive resources.",
-                footer_text: "&copy; 2023 AI Master. All rights reserved."
-            },
-            he: {
-                welcome: "ברוכים הבאים ל- AI Master",
-                hero_subtitle: "גלה כיצד בינה מלאכותית יכולה להפוך את הקריירה והעסק שלך.",
-                features_title: "התכונות שלנו",
-                feature_1_title: "הדרכות AI",
-                feature_1_desc: "קורסים מעשיים לשלוט ב-AI בכל התחומים.",
-                feature_2_title: "כלים AI",
-                feature_2_desc: "רשימה מלאה של כלים AI עם מדריכים מפורטים.",
-                feature_3_title: "חנות",
-                feature_3_desc: "קנה חבילות פרומפטים, ספרים אלקטרוניים ומשאבים בלעדיים.",
-                footer_text: "&copy; 2023 AI Master. כל הזכויות שמורות."
-            }
-        };
+    <!-- Bouton Retour en haut -->
+    <button id="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-        // Fonction pour changer la langue
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+    <!-- Bouton WhatsApp -->
+    <a href="https://wa.me/yourphonenumber" class="whatsapp-button" aria-label="Contact WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-            // Changer la direction du texte pour l'hébreu
-            if (lang === 'he') {
-                document.body.style.direction = 'rtl';
-            } else {
-                document.body.style.direction = 'ltr';
-            }
-        }
-
-        // Langue par défaut au chargement de la page
-        window.onload = () => changeLanguage('fr');
-    </script>
+    <!-- Scripts -->
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>
