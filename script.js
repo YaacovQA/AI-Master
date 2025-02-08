@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     // Traductions
     const translations = {
         fr: {
