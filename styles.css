@@ -101,13 +101,17 @@ header .menu a:hover {
     transform: scale(1.05);
 }
 
-.features, .training, .tools, .shop {
+.features, .training, .tools, .shop, .contact, .signup {
     padding: 50px 20px;
+    text-align: center;
     background-color: #000;
+}
+
+.features, .training, .tools, .shop {
     display: flex;
-    flex-wrap: wrap; /* Adaptatif pour petits écrans */
+    flex-wrap: wrap; /* Permet de passer à une disposition verticale sur petits écrans */
     justify-content: center;
-    gap: 20px; /* Espacement entre les sections */
+    gap: 20px; /* Espacement entre les éléments */
 }
 
 .features .feature, .training .course, .tools .tool, .shop .product {
@@ -115,15 +119,18 @@ header .menu a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-    width: calc(33.333% - 40px); /* Trois sections par ligne sur grands écrans */
-    min-width: 300px; /* Largeur minimale pour petits écrans */
+    margin: 0 auto;
+    max-width: 300px;
+    flex: 1 1 calc(33.333% - 40px); /* Trois éléments par ligne sur grands écrans */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
 .features img, .training img, .tools img, .shop img {
-    width: 100%; /* L'image prend toute la largeur de la section */
-    height: 200px; /* Hauteur fixe pour uniformité */
-    object-fit: cover; /* Conserver les proportions */
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -180,82 +187,6 @@ footer {
     background-color: #cc0000;
 }
 
-/* Bouton WhatsApp */
-.whatsapp-button {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.whatsapp-button i {
-    font-size: 1.5em;
-    color: white;
-}
-
-/* Formulaire moderne */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
-}
-
-.contact-form h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.contact-form label {
-    display: block;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #ff4d4d;
-}
-
-.contact-form input, .contact-form textarea, .contact-form button {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background: #333;
-    color: white;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 150px;
-}
-
-.contact-form button {
-    background-color: #ff4d4d;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.contact-form button:hover {
-    transform: scale(1.05);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -264,6 +195,6 @@ footer {
     }
 
     .features .feature, .training .course, .tools .tool, .shop .product {
-        width: 100%; /* Une section par ligne sur petits écrans */
+        flex: 1 1 100%; /* Un élément par ligne sur petits écrans */
     }
 }
