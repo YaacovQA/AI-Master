@@ -53,27 +53,24 @@ header .menu a:hover {
     color: #ff4d4d;
 }
 
-/* Bouton hamburger */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
+/* Styles pour le panier flottant */
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
-.menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: all 0.3s ease;
-}
-
-/* Styles pour le panier */
-.cart-icon {
-    position: relative;
-    cursor: pointer;
-    color: #fff;
+.floating-cart i {
     font-size: 1.5em;
 }
 
@@ -81,8 +78,8 @@ header .menu a:hover {
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: #ff4d4d;
-    color: white;
+    background-color: white;
+    color: #ff4d4d;
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -90,8 +87,10 @@ header .menu a:hover {
     align-items: center;
     justify-content: center;
     font-size: 0.8em;
+    font-weight: bold;
 }
 
+/* Styles pour le modal du panier */
 .cart-modal {
     display: none;
     position: fixed;
@@ -141,52 +140,6 @@ header .menu a:hover {
 
 #checkout-btn:hover, #close-cart:hover {
     background-color: #cc0000;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    header .menu {
-        display: none; /* Masquer le menu par défaut */
-        flex-direction: column;
-        position: absolute;
-        top: 80px; /* Position sous le header */
-        left: 0;
-        width: 100%;
-        background-color: #000;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    header .menu.active {
-        display: flex; /* Afficher le menu lorsqu'il est actif */
-    }
-
-    header .menu li {
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: flex; /* Afficher le bouton hamburger */
-    }
-}
-
-/* Animation du bouton hamburger */
-.menu-toggle.active div:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-toggle.active div:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active div:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Section Hero */
@@ -273,8 +226,8 @@ header .menu a:hover {
 }
 
 .feature img {
-    width: 300px; /* Largeur fixe */
-    height: 200px; /* Hauteur fixe */
+    width: 100%; /* Largeur fixe */
+    height: auto; /* Hauteur adaptative */
     object-fit: cover; /* Ajuster l'image sans déformation */
     border-radius: 10px;
     margin-bottom: 20px;
@@ -282,7 +235,7 @@ header .menu a:hover {
 }
 
 .feature img:hover {
-    transform: scale(1.1); /* Zoom léger au survol */
+    transform: scale(1.05); /* Zoom léger au survol */
     border: 2px solid #ff4d4d; /* Bordure rouge vibrante */
 }
 
@@ -313,9 +266,25 @@ header .menu a:hover {
         grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
     }
 
-    .feature img {
-        width: 100%; /* Adapter la largeur des images à l'écran */
-        height: auto; /* Conserver les proportions */
+    header .menu {
+        display: none; /* Masquer le menu par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Position sous le header */
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header .menu.active {
+        display: flex; /* Afficher le menu lorsqu'il est actif */
+    }
+
+    header .menu li {
+        margin-bottom: 15px;
+        text-align: center;
     }
 }
 
@@ -354,16 +323,4 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Animation fade-in */
-.fade-in-target {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
 }
