@@ -48,3 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+// Menu mobile toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        // Animation pour le bouton hamburger
+        const lines = menuToggle.querySelectorAll('div');
+        lines.forEach(line => line.classList.toggle('active'));
+    });
+
+    // Bouton Retour en haut
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
