@@ -1,4 +1,4 @@
- /* Reset CSS */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,29 @@ body {
     line-height: 1.6;
     color: #fff;
     background-color: #000;
+}
+
+/* Uniformisation des images */
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Taille fixe pour les images dans les cartes de formation */
+.feature img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Taille fixe pour les images dans la section Hero */
+.hero video,
+.hero img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
 }
 
 /* Header */
@@ -223,20 +246,6 @@ header .menu a:hover {
 .feature:hover {
     transform: translateY(-10px); /* Légère élévation au survol */
     box-shadow: 0 8px 12px rgba(255, 77, 77, 0.3); /* Ombre plus prononcée */
-}
-
-.feature img {
-    width: 100%; /* Largeur fixe */
-    height: auto; /* Hauteur adaptative */
-    object-fit: cover; /* Ajuster l'image sans déformation */
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, border 0.3s ease;
-}
-
-.feature img:hover {
-    transform: scale(1.05); /* Zoom léger au survol */
-    border: 2px solid #ff4d4d; /* Bordure rouge vibrante */
 }
 
 .price-tag {
