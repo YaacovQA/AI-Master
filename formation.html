@@ -15,14 +15,30 @@
     <!-- Header -->
     <header>
         <div class="logo">AI Master</div>
+        <!-- Icône de panier -->
+        <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <!-- Menu principal -->
         <ul class="menu">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="formation.html">Formation IA</a></li>
             <li><a href="outils.html">Outils IA</a></li>
-            <li><a href="boutique.html">Boutique</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </header>
+
+    <!-- Modal du panier -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <h3>Votre panier</h3>
+            <ul id="cart-items"></ul>
+            <p>Total : <span id="cart-total">0 €</span></p>
+            <button id="checkout-btn">Finaliser l'achat</button>
+            <button id="close-cart">Fermer</button>
+        </div>
+    </div>
 
     <!-- Section Hero -->
     <section class="hero">
@@ -47,70 +63,80 @@
                 <img src="assets/marketing.jpg" alt="IA pour le Marketing" loading="lazy">
                 <h3>IA pour le Marketing</h3>
                 <p>Automatisez vos campagnes publicitaires et analysez les données clients en temps réel.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">49€</div>
+                <button class="btn add-to-cart" data-name="IA pour le Marketing" data-price="49">Ajouter au panier</button>
             </div>
             <!-- Formation 2 -->
             <div class="feature fade-in-target">
                 <img src="assets/etudiant.jpg" alt="IA pour les Étudiants" loading="lazy">
                 <h3>IA pour les Étudiants</h3>
                 <p>Utilisez l'IA pour la recherche, la rédaction et l'organisation de vos études.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">39€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Étudiants" data-price="39">Ajouter au panier</button>
             </div>
             <!-- Formation 3 -->
             <div class="feature fade-in-target">
                 <img src="assets/cuisinier.jpg" alt="IA pour les Cuisiniers" loading="lazy">
                 <h3>IA pour les Cuisiniers</h3>
                 <p>Créez des recettes innovantes avec des suggestions d'IA basées sur vos ingrédients.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">29€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Cuisiniers" data-price="29">Ajouter au panier</button>
             </div>
             <!-- Formation 4 -->
             <div class="feature fade-in-target">
                 <img src="assets/artistes.jpg" alt="IA pour les Artistes" loading="lazy">
                 <h3>IA pour les Artistes</h3>
                 <p>Générez des œuvres d'art uniques grâce aux outils IA comme MidJourney et DALL·E.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">59€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Artistes" data-price="59">Ajouter au panier</button>
             </div>
             <!-- Formation 5 -->
             <div class="feature fade-in-target">
                 <img src="assets/ecrivain.jpg" alt="IA pour les Écrivains" loading="lazy">
                 <h3>IA pour les Écrivains</h3>
                 <p>Utilisez ChatGPT pour générer des idées, écrire des scénarios ou corriger vos textes.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">45€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Écrivains" data-price="45">Ajouter au panier</button>
             </div>
             <!-- Formation 6 -->
             <div class="feature fade-in-target">
                 <img src="assets/entrepreneur.jpg" alt="IA pour les Entrepreneurs" loading="lazy">
                 <h3>IA pour les Entrepreneurs</h3>
                 <p>Optimisez vos processus commerciaux avec des solutions IA personnalisées.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">69€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Entrepreneurs" data-price="69">Ajouter au panier</button>
             </div>
             <!-- Formation 7 -->
             <div class="feature fade-in-target">
                 <img src="assets/developpeur.jpg" alt="IA pour les Développeurs" loading="lazy">
                 <h3>IA pour les Développeurs</h3>
                 <p>Apprenez à créer vos propres modèles IA avec Python et TensorFlow.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">79€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Développeurs" data-price="79">Ajouter au panier</button>
             </div>
             <!-- Formation 8 -->
             <div class="feature fade-in-target">
                 <img src="assets/medecin.jpg" alt="IA pour les Médecins" loading="lazy">
                 <h3>IA pour les Médecins</h3>
                 <p>Utilisez l'IA pour analyser des diagnostics médicaux et prédire des traitements efficaces.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">89€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Médecins" data-price="89">Ajouter au panier</button>
             </div>
             <!-- Formation 9 -->
             <div class="feature fade-in-target">
                 <img src="assets/juristes.jpg" alt="IA pour les Juristes" loading="lazy">
                 <h3>IA pour les Juristes</h3>
                 <p>Automatisez la recherche juridique et générez des contrats intelligents.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">55€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Juristes" data-price="55">Ajouter au panier</button>
             </div>
             <!-- Formation 10 -->
             <div class="feature fade-in-target">
                 <img src="assets/prof.jpg" alt="IA pour les Enseignants" loading="lazy">
                 <h3>IA pour les Enseignants</h3>
                 <p>Personnalisez l'apprentissage de vos élèves avec des outils IA adaptés.</p>
-                <a href="boutique.html" class="btn">Acheter ce cours</a>
+                <div class="price-tag">42€</div>
+                <button class="btn add-to-cart" data-name="IA pour les Enseignants" data-price="42">Ajouter au panier</button>
             </div>
             <!-- Ajoutez d'autres formations ici si nécessaire -->
         </div>
