@@ -363,3 +363,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+/* Supprimer le soulignement du logo */
+header .logo {
+    text-decoration: none; /* Supprime le soulignement */
+}
