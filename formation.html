@@ -7,14 +7,14 @@
     <meta property="og:title" content="Formations IA - AI Master">
     <meta property="og:description" content="Nos formations sont conçues pour vous offrir une expérience pratique et immédiate dans le domaine de l'IA.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&w=1200&q=80">
-    <title>Formations IA - AI Master</title> 
+    <title>Formations IA - AI Master</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
-       <a href="index.html" class="logo">AI Master</a>
+        <a href="index.html" class="logo">AI Master</a>
         <!-- Icône de panier -->
         <div class="cart-icon" id="cart-icon">
             <i class="fas fa-shopping-cart"></i>
@@ -29,7 +29,7 @@
         </ul>
     </header>
 
-   <!-- Panier flottant -->
+    <!-- Panier flottant -->
     <div class="floating-cart" id="floating-cart">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count" id="cart-count">0</span>
@@ -42,10 +42,12 @@
             <ul id="cart-items"></ul>
             <p>Total : <span id="cart-total">0 €</span></p>
             <button id="checkout-btn">Finaliser l'achat</button>
+            <button id="paypal-checkout-btn">
+                <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Payer avec PayPal">
+            </button>
             <button id="close-cart">Fermer</button>
         </div>
     </div>
-
 
     <!-- Section Hero -->
     <section class="hero">
@@ -65,6 +67,7 @@
         <h1>Nos cours</h1>
         <p>Des formations pratiques pour maîtriser l'IA dans tous les domaines.</p>
         <div class="feature-list">
+           
             <!-- Formation 1 -->
             <div class="feature fade-in-target">
                 <img src="assets/marketing.jpg" alt="IA pour le Marketing" loading="lazy">
