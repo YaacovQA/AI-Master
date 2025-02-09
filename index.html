@@ -14,7 +14,7 @@
 <body>
     <!-- Header -->
     <header>
-<a href="index.html" class="logo">AI Master</a>
+        <a href="index.html" class="logo">AI Master</a>
         <!-- Bouton hamburger -->
         <div class="menu-toggle" id="menu-toggle">
             <div></div>
@@ -29,6 +29,11 @@
             <li><a href="boutique.html">Boutique</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <!-- Panier flottant -->
+        <div class="floating-cart" id="floating-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
     </header>
 
     <!-- Section Hero -->
@@ -73,6 +78,20 @@
         </div>
     </section>
 
+    <!-- Modal du panier -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <h3>Votre panier</h3>
+            <ul id="cart-items"></ul>
+            <p>Total : <span id="cart-total">0 €</span></p>
+            <button id="checkout-btn">Finaliser l'achat</button>
+            <button id="paypal-checkout-btn">
+                <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Payer avec PayPal">
+            </button>
+            <button id="close-cart">Fermer</button>
+        </div>
+    </div>
+
     <!-- Bouton Retour en haut -->
     <button id="back-to-top">Retour en haut</button>
 
@@ -80,7 +99,6 @@
     <footer>
         <p>&copy; 2023 AI Master. Tous droits réservés. <a href="politique-confidentialite.html">Politique de confidentialité</a> | <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
