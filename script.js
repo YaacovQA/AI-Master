@@ -1,5 +1,5 @@
-// Animation de fade-in au scroll
 document.addEventListener('DOMContentLoaded', () => {
+    // Animation de fade-in au scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -47,52 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
             return re.test(String(email).toLowerCase());
         }
     }
-});
-// Menu mobile toggle
-document.addEventListener('DOMContentLoaded', () => {
+
+    // Menu mobile toggle
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('active');
-        // Animation pour le bouton hamburger
         const lines = menuToggle.querySelectorAll('div');
         lines.forEach(line => line.classList.toggle('active'));
     });
 
-    // Bouton Retour en haut
-    const backToTopButton = document.getElementById('back-to-top');
-    if (backToTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
-
-// Gestion du panier
-document.addEventListener('DOMContentLoaded', () => {
+    // Gestion du panier
     const cartIcon = document.getElementById('cart-icon');
+    const floatingCart = document.getElementById('floating-cart');
     const cartModal = document.getElementById('cart-modal');
     const closeCart = document.getElementById('close-cart');
     const cartItemsList = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
     const cartTotal = document.getElementById('cart-total');
     const checkoutBtn = document.getElementById('checkout-btn');
+    const paypalCheckoutBtn = document.getElementById('paypal-checkout-btn');
 
     let cart = [];
     let total = 0;
 
     // Ouvrir/Fermer le modal du panier
-    cartIcon.addEventListener('click', () => {
-        cartModal.style.display = 'block';
+    [cartIcon, floatingCart].forEach(icon => {
+        icon.addEventListener('click', () => {
+            cartModal.style.display = 'block';
+        });
     });
 
     closeCart.addEventListener('click', () => {
@@ -105,11 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = event.target.dataset.name;
             const price = parseFloat(event.target.dataset.price);
 
-            // Ajouter au panier
-            cart.push({ name, price });
-            total += price;
+            // Vérifier si l'article est déjà dans le panier
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1; // Augmenter la quantité
+            } else {
+                cart.push({ name, price, quantity: 1 }); // Ajouter un nouvel article
+            }
 
-            // Mettre à jour l'affichage
+            total += price;
             updateCart();
         });
     });
@@ -119,67 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsList.innerHTML = '';
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price}€`;
+            li.textContent = `${item.name} - ${item.price}€ x ${item.quantity}`;
             cartItemsList.appendChild(li);
         });
-
-        cartCount.textContent = cart.length;
+        cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartTotal.textContent = `${total.toFixed(2)} €`;
     }
 
-    // Finaliser l'achat
-    checkoutBtn.addEventListener('click', () => {
-        alert(`Merci pour votre achat ! Total : ${total.toFixed(2)}€`);
-        cart = [];
-        total = 0;
-        updateCart();
-        cartModal.style.display = 'none';
+    // Finaliser l'achat avec PayPal
+    paypalCheckoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert("Votre panier est vide !");
+            return;
+        }
+
+        // Simuler une redirection vers PayPal
+        const items = cart.map(item => `${item.name} (${item.quantity}x)`).join(', ');
+        const url = `https://www.paypal.com/checkoutnow?amount=${total}&items=${encodeURIComponent(items)}`;
+        window.open(url, '_blank');
     });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const cartIcon = document.getElementById('floating-cart');
-    const cartModal = document.getElementById('cart-modal');
-    const closeCart = document.getElementById('close-cart');
-    const cartItemsList = document.getElementById('cart-items');
-    const cartCount = document.getElementById('cart-count');
-    const cartTotal = document.getElementById('cart-total');
-    const checkoutBtn = document.getElementById('checkout-btn');
-
-    let cart = [];
-    let total = 0;
-
-    // Ouvrir/Fermer le modal du panier
-    cartIcon.addEventListener('click', () => {
-        cartModal.style.display = 'block';
-    });
-
-    closeCart.addEventListener('click', () => {
-        cartModal.style.display = 'none';
-    });
-
-    // Ajouter un article au panier
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const name = event.target.dataset.name;
-            const price = parseFloat(event.target.dataset.price);
-
-            // Ajouter au panier
-            cart.push({ name, price });
-            total += price;
-
-            // Mettre à jour l'affichage
-            updateCart();
-        });
-    });
-
-    // Mettre à jour le panier
-    function updateCart() {
-        cartItemsList.innerHTML = '';
-        cart.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price}€`;
-            cartItemsList.appendChild(li);
-        });
-
-        cartCount.textContent = cart
