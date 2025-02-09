@@ -295,12 +295,40 @@ header .menu a:hover {
         margin-bottom: 15px;
         text-align: center;
     }
+
+    /* Bouton hamburger */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }
 
 /* Bouton Retour en haut */
 #back-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Déplacé plus haut */
     right: 20px;
     background-color: #ff4d4d;
     color: white;
@@ -315,6 +343,8 @@ header .menu a:hover {
 #back-to-top:hover {
     background-color: #cc0000;
 }
+
+/*
 
 /* Footer */
 footer {
